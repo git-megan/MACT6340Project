@@ -1,2 +1,5 @@
 # MACT6340Project
-Web3 project for MA in Creative Technology course 6340
+
+## Context
+
+This is a Web3 project for my MA in Creative Technology course 6340.
