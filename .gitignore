@@ -1,4 +1,13 @@
+# environment variables
 .env
-node_modules
-.vscode
+.env.keys
+.env.*
+
+# npm
+node_modules/
+
+# VS Code
+.vscode/
+
+# notes
 scratch.txt
