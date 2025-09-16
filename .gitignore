@@ -4,7 +4,7 @@
 .env.*
 
 # npm
-node_modules/
+node_modules
 
 # VS Code
 .vscode/
