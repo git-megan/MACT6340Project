@@ -77,46 +77,186 @@
 
     <div class="b-example-divider"></div>
 
-    <!--Project Work Section-->
+    <!--Cards layout for project work-->
 
-    <div class="container px-4 py-5">
-      <h2 class="pb-2 border-bottom">Latest work</h2>
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">Featured Projects</h2>
 
-      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-        <div class="d-flex flex-column align-items-start gap-2">
-          <img
-            class="d-block mx-auto mb-4"
-            src="../images/plaza-klein-unsplash.jpg"
-            alt=""
-            width="600"
-            height="400"
-          />
-          <h3 class="fw-bold">Geometric-inspired Artwork</h3>
-          <p class="text-muted">
-            A series of creative coding artwork that is inspired by geometric
-            shapes and repeating patterns in the world around us.
-          </p>
-          <a href="#" class="btn btn-outline-secondary btn-lg px-4"
-            >Learn more</a
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <div
+            class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="
+              background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0) 30%,
+                  /* transparent top */ rgba(0, 0, 0, 0.8) 100%
+                    /* dark bottom */
+                ),
+                url('images/plaza-klein-unsplash.jpg');
+              background-size: cover;
+            "
           >
+            <div
+              class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+            >
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                Geometric-inspired Art
+              </h3>
+              <p>
+                A series of creative coding artwork that is inspired by
+                geometric shapes and repeating patterns in the world around us.
+              </p>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="d-flex align-items-center me-3">
+                  <!--code slash svg icon-->
+                  <svg
+                    class="bi me-2"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                    />
+                  </svg>
+                  <small>Processing</small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <!--calendar week svg icon-->
+                  <svg
+                    class="bi me-2"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
+                    />
+                    <path
+                      d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                    />
+                  </svg>
+                  <small>2024</small>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="d-flex flex-column align-items-start gap-2">
-          <img
-            class="d-block mx-auto mb-4"
-            src="../images/bridge-trovato-unsplash.jpg"
-            alt=""
-            width="600"
-            height="400"
-          />
-          <h3 class="fw-bold">Sounds of the City</h3>
-          <p class="text-muted">
-            A collection of ambient music and sound design projects inspired by
-            the cacaphony noises and calm repetitive sounds heard while walking
-            through the city.
-          </p>
-          <a href="#" class="btn btn-outline-secondary btn-lg px-4"
-            >Learn more</a
+
+        <div class="col">
+          <div
+            class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="
+              background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0) 30%,
+                  /* transparent top */ rgba(0, 0, 0, 0.8) 100%
+                    /* dark bottom */
+                ),
+                url('images/bridge-trovato-unsplash.jpg');
+              background-size: cover;
+            "
           >
+            <div
+              class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+            >
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                Sounds of the City
+              </h3>
+              <p>
+                A collection of ambient music and sound design projects inspired
+                by the cacaphony noises and calm repetitive sounds heard while
+                walking through the city.
+              </p>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="d-flex align-items-center me-3">
+                  <svg
+                    class="bi me-2"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                    />
+                  </svg>
+                  <small>Ruby (Sonic Pi)</small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg
+                    class="bi me-2"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
+                    />
+                    <path
+                      d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                    />
+                  </svg>
+                  <small>2025</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div
+            class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+            style="
+              background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0) 30%,
+                  /* transparent top */ rgba(0, 0, 0, 0.8) 100%
+                    /* dark bottom */
+                ),
+                url('images/smoke-meier-unsplash.jpg');
+              background-size: cover;
+            "
+          >
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Up in Smoke</h3>
+              <p>
+                An NFT collection inspired by the fluid motion and organic
+                shapes of smoke.
+              </p>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="d-flex align-items-center me-3">
+                  <svg
+                    class="bi me-2"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
+                    />
+                  </svg>
+                  <small>p5.js</small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg
+                    class="bi me-2"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
+                    />
+                    <path
+                      d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                    />
+                  </svg>
+                  <small>2025</small>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
