@@ -73,27 +73,31 @@
       </div>
     </div>
 
-    <!--About section-->
+    <!--Contact section-->
     <div class="container px-4 py-5">
       <h1 class="pb-2 border-bottom">Contact</h1>
 
       <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
-        <div class="d-flex flex-column align-items-start gap-2">
-          <img
-            class="d-block mx-auto mb-4"
-            src="../images/transparency.svg"
-            alt=""
-            width="100"
-            height="100"
-          />
-        </div>
-        <div class="d-flex flex-column align-items-start gap-2">
-          <h3 class="fw-bold">Let's Connect!</h3>
-          <p class="text-muted">
-            Reach out to me if you are interested in discussing my latest work
-            or looking to collaborate on a future project.
+        <!--Contact form-->
+        <form action="/mail" method="post">
+          <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
           </p>
-        </div>
+          <p>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+          </p>
+          <p>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+          </p>
+          <p class="button">
+            <button id="contact-form-button" type="submit">
+              Send your message
+            </button>
+          </p>
+        </form>
       </div>
     </div>
 
@@ -140,6 +144,6 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/contact.js"></script>
   </body>
 </html>

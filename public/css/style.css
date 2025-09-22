@@ -8,7 +8,26 @@ html {
   box-sizing: inherit;
 }
 
+/*
 .space {
   height: 100px;
   background-color: white;
 }
+
+.area {
+  min-height: 750px;
+}
+
+.spacer {
+  min-height: 75px;
+}
+
+#splash {
+  min-height: 800px;
+  background: url("/images/smoke-meier-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+*/
