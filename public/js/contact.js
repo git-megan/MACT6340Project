@@ -22,14 +22,33 @@
     });
   function sendTheEmail() {
     // get data from form
-    let firstName = document.querySelector("#first-name").value;
-    let lastName = document.querySelector("#last-name").value;
-    let email = document.querySelector("#mail").value;
-    let message = document.querySelector("#msg").value;
+    let firstName = document.querySelector("#contact-first").value;
+    let lastName = document.querySelector("#contact-last").value;
+    let email = document.querySelector("#contact-email-addr").value;
+    let message = document.querySelector("#contact-question").value;
 
-    // log data from form
-    console.log(
-      `Name: ${firsName} ${lastName}, Email: ${email}, Message: ${message}`
-    );
+    let obj = {
+      sub: `${firstName} submitted a contact form!`,
+      txt: `${firstName} ${lastName} submitted a message from your artist website. Contact email: ${email}. Message: ${message}.`,
+    };
+
+    // send the data
+    fetch("/mail", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    })
+      .then((r) => r.json())
+      .then((response) => {
+        document.querySelector("#contact-button-response").innerHTML =
+          response.result;
+      })
+      .then(() => {
+        setTimeout(() => {
+          document.querySelector(("#contact-button-response".innerHTML = ""));
+        }, "5000");
+      });
   }
 })();

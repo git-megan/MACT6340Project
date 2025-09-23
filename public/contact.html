@@ -21,7 +21,7 @@
     <!--nav bar-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"> Centered Art</a>
+        <a class="navbar-brand" href="index.html"> Centered Art</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -81,10 +81,10 @@
         <!--Contact form-->
         <form id="contact-form" class="needs-validation">
           <div class="row mb-3">
-            <label for="first-name" class="form-label">Name</label>
+            <label for="contact-first" class="form-label">Name</label>
             <div class="col">
               <input
-                id="first-name"
+                id="contact-first"
                 type="text"
                 class="form-control"
                 placeholder="First name"
@@ -94,7 +94,7 @@
             </div>
             <div class="col">
               <input
-                id="last-name"
+                id="contact-last"
                 type="text"
                 class="form-control"
                 placeholder="Last name"
@@ -104,12 +104,14 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="mail" class="form-label">Email address</label>
+            <label for="contact-email-addr" class="form-label"
+              >Email address</label
+            >
             <input
               type="email"
               class="form-control"
               placeholder="Email address"
-              id="mail"
+              id="contact-email-addr"
               aria-describedby="emailHelp"
               required
             />
@@ -119,12 +121,12 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="msg" class="form-label">Message</label>
+            <label for="contact-question" class="form-label">Message</label>
             <textarea
               class="form-control"
-              id="msg"
+              id="contact-question"
               rows="3"
-              placeholder="Enter your message."
+              placeholder="Enter your message or question."
             ></textarea>
             <!--Message validation text-->
             <div id="messageFeedback" class="invalid-feedback">
@@ -139,6 +141,8 @@
             >
               Submit
             </button>
+            <span class="m-2" id="contact-button-response"></span>
+            <span class="m-2" id="result"></span>
           </div>
         </form>
       </div>
