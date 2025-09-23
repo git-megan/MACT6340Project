@@ -3,13 +3,13 @@ import nodemailer from "nodemailer";
 export async function sendMessage(sub, txt) {
   let transporter = nodemailer.createTransport({
     host: process.env.MAIL_HOST,
-    port: process.env.MAIL_PORT,
-    secure: process.env.MAIL_SECURE,
+    port: parseInt(process.env.MAIL_PORT, 10), // int type
+    secure: process.env.MAIL_SECURE === "true", // boolean type
     auth: {
       user: process.env.MAIL_USERNAME,
       pass: process.env.MAIL_PASSWORD,
     },
-    requireTLS: process.env.MAIL_TLS,
+    requireTLS: process.env.MAIL_TLS === "true", // boolean type
   });
 
   let message = {
@@ -25,6 +25,6 @@ export async function sendMessage(sub, txt) {
       console.log("Message sent");
     })
     .catch((err) => {
-      console.log(`Message not sent - ${err}`);
+      console.log("Message not sent:", err);
     });
 }
