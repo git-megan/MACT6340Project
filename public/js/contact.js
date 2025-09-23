@@ -3,23 +3,49 @@
 
   // get the contact form
   let form = document.querySelector("#contact-form");
+  let messageField = document.querySelector("#contact-question");
 
-  document
-    .querySelector("#contact-form-button")
-    .addEventListener("submit", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      let formValid = true;
-      if (!form.checkValidity()) {
-        formValid = false;
+  // document
+  //   .querySelector("#contact-form-button")
+  //   .addEventListener("submit", (event) => {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //     let formValid = true;
+  //     if (!form.checkValidity()) {
+  //       formValid = false;
+  //     }
+
+  //     form.classList.add("was-validated");
+
+  //     if (formValid) {
+  //       sendTheEmail();
+  //     }
+  //   });
+
+  form.addEventListener(
+    "submit",
+    (event) => {
+      // Trim whitespace from message
+      if (!messageField.value.trim()) {
+        messageField.setCustomValidity("Please enter a message.");
+      } else {
+        messageField.setCustomValidity(""); // clear error
       }
 
-      form.classList.add("was-validated");
-
-      if (formValid) {
+      // Bootstrap form validation
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      } else {
+        // if valid, prevent default and send email
+        event.preventDefault();
         sendTheEmail();
       }
-    });
+      form.classList.add("was-validated");
+    },
+    false
+  );
+
   function sendTheEmail() {
     // get data from form
     let firstName = document.querySelector("#contact-first").value;
@@ -47,7 +73,7 @@
       })
       .then(() => {
         setTimeout(() => {
-          document.querySelector(("#contact-button-response".innerHTML = ""));
+          document.querySelector("#contact-button-response").innerHTML = "";
         }, "5000");
       });
   }

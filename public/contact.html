@@ -79,7 +79,7 @@
 
       <div class="row rg-5 py-5">
         <!--Contact form-->
-        <form id="contact-form" class="needs-validation">
+        <form id="contact-form" class="needs-validation" novalidate>
           <div class="row mb-3">
             <label for="contact-first" class="form-label">Name</label>
             <div class="col">
@@ -91,6 +91,8 @@
                 aria-label="First name"
                 required
               />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter your full name.</div>
             </div>
             <div class="col">
               <input
@@ -101,6 +103,8 @@
                 aria-label="Last name"
                 required
               />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter your full name.</div>
             </div>
           </div>
           <div class="mb-3">
@@ -116,8 +120,9 @@
               required
             />
             <!--Email validation text-->
+            <div class="valid-feedback">Looks good!</div>
             <div id="emailFeedback" class="invalid-feedback">
-              Format should be example@example.com.
+              Please follow this format: example@example.com
             </div>
           </div>
           <div class="mb-3">
@@ -129,8 +134,9 @@
               placeholder="Enter your message or question."
             ></textarea>
             <!--Message validation text-->
+            <div class="valid-feedback">Looks good!</div>
             <div id="messageFeedback" class="invalid-feedback">
-              Please enter a message.
+              Please enter a message (not just spaces).
             </div>
           </div>
           <div class="mb-3">
