@@ -77,26 +77,69 @@
     <div class="container px-4 py-5">
       <h1 class="pb-2 border-bottom">Contact</h1>
 
-      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+      <div class="row rg-5 py-5">
         <!--Contact form-->
-        <form action="/mail" method="post">
-          <p>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name" />
-          </p>
-          <p>
-            <label for="mail">Email:</label>
-            <input type="email" id="mail" name="user_email" />
-          </p>
-          <p>
-            <label for="msg">Message:</label>
-            <textarea id="msg" name="user_message"></textarea>
-          </p>
-          <p class="button">
-            <button id="contact-form-button" type="submit">
-              Send your message
+        <form id="contact-form" class="needs-validation">
+          <div class="row mb-3">
+            <label for="first-name" class="form-label">Name</label>
+            <div class="col">
+              <input
+                id="first-name"
+                type="text"
+                class="form-control"
+                placeholder="First name"
+                aria-label="First name"
+                required
+              />
+            </div>
+            <div class="col">
+              <input
+                id="last-name"
+                type="text"
+                class="form-control"
+                placeholder="Last name"
+                aria-label="Last name"
+                required
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="mail" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email address"
+              id="mail"
+              aria-describedby="emailHelp"
+              required
+            />
+            <!--Email validation text-->
+            <div id="emailFeedback" class="invalid-feedback">
+              Format should be example@example.com.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="msg" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              id="msg"
+              rows="3"
+              placeholder="Enter your message."
+            ></textarea>
+            <!--Message validation text-->
+            <div id="messageFeedback" class="invalid-feedback">
+              Please enter a message.
+            </div>
+          </div>
+          <div class="mb-3">
+            <button
+              id="contact-form-button"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Submit
             </button>
-          </p>
+          </div>
         </form>
       </div>
     </div>
