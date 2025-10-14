@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="../images/highlights.svg" />
-    <title>Projects</title>
+    <title>Personal NFT Mint</title>
     <meta name="author" content="Megan" />
-    <meta name="description" content="A page for multiple projects" />
+    <meta name="description" content="A personal NFT mint for an artist" />
     <!--Using Bootstrap for most styling-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -16,11 +16,12 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
     <!--nav bar-->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> Centered Art</a>
+        <a class="navbar-brand" href="/"> Centered Art</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -35,23 +36,27 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="/about">About</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="projects.html"
-                >Projects</a
-              >
+              <a class="nav-link" href="/projects">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="/contact">Contact</a>
             </li>
           </ul>
+          <div>
+            <button
+              id="wallet-connect"
+              type="button"
+              class="btn btn-outline-light"
+            >
+              Connect Wallet
+            </button>
+          </div>
         </div>
       </div>
     </nav>
@@ -66,7 +71,7 @@
         width="72"
         height="57"
       />
-      <h1 class="display-5 fw-bold">Project Work</h1>
+      <h1 class="display-5 fw-bold">Centered Art</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">
           Megan M.'s creative coding artwork centering both the calm and the
@@ -76,74 +81,41 @@
     </div>
 
     <div class="b-example-divider"></div>
+    <!--Philosophy section-->
+    <div class="container px-4 py-5">
+      <h2 class="pb-2 border-bottom">Philosphy</h2>
 
-    <!--Cards layout for project work-->
+      <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+        <div class="d-flex flex-column align-items-start gap-2">
+          <img
+            class="d-block mx-auto mb-4"
+            src="../images/highlights.svg"
+            alt=""
+            width="100"
+            height="100"
+          />
+        </div>
+        <div class="d-flex flex-column align-items-start gap-2">
+          <h3 class="fw-bold">My Approach to the Work</h3>
+          <p class="text-muted">
+            As a multidisciplinary person, I love learning a variety of mediums
+            spanning visual arts, music, psychology, and technology. My creative
+            practice involves dedicating time to project work, and seeing what
+            emerges from the blend of my skillset and the emergent properties of
+            the project in the context of its medium.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="b-example-divider"></div>
+
+    <!--Cards layout for latest work-->
 
     <div class="container px-4 py-5" id="custom-cards">
       <h2 class="pb-2 border-bottom">Featured Projects</h2>
 
-      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        <div class="col">
-          <div
-            class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-            style="
-              background: linear-gradient(
-                  to bottom,
-                  rgba(0, 0, 0, 0) 30%,
-                  /* transparent top */ rgba(0, 0, 0, 0.8) 100%
-                    /* dark bottom */
-                ),
-                url('images/plaza-klein-unsplash.jpg');
-              background-size: cover;
-            "
-          >
-            <div
-              class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
-            >
-              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
-                Geometric-inspired Art
-              </h3>
-              <p>
-                A series of creative coding artwork that is inspired by
-                geometric shapes and repeating patterns in the world around us.
-              </p>
-              <ul class="d-flex list-unstyled mt-auto">
-                <li class="d-flex align-items-center me-3">
-                  <!--code slash svg icon-->
-                  <svg
-                    class="bi me-2"
-                    width="1em"
-                    height="1em"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
-                    />
-                  </svg>
-                  <small>Processing</small>
-                </li>
-                <li class="d-flex align-items-center">
-                  <!--calendar week svg icon-->
-                  <svg
-                    class="bi me-2"
-                    width="1em"
-                    height="1em"
-                    fill="currentColor"
-                  >
-                    <path
-                      d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
-                    />
-                    <path
-                      d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
-                    />
-                  </svg>
-                  <small>2024</small>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+      <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
         <div class="col">
           <div
             class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
@@ -260,7 +232,6 @@
         </div>
       </div>
     </div>
-
     <div class="space"></div>
     <!--Footer section-->
     <div class="container">
@@ -282,18 +253,16 @@
 
         <ul class="nav col-md-4 justify-content-end">
           <li class="nav-item">
-            <a href="index.html" class="nav-link px-2 text-muted">Home</a>
+            <a href="/" class="nav-link px-2 text-muted">Home</a>
           </li>
           <li class="nav-item">
-            <a href="about.html" class="nav-link px-2 text-muted">About</a>
+            <a href="/about" class="nav-link px-2 text-muted">About</a>
           </li>
           <li class="nav-item">
-            <a href="projects.html" class="nav-link px-2 text-muted"
-              >Projects</a
-            >
+            <a href="/projects" class="nav-link px-2 text-muted">Projects</a>
           </li>
           <li class="nav-item">
-            <a href="contact.html" class="nav-link px-2 text-muted">Contact</a>
+            <a href="/contact" class="nav-link px-2 text-muted">Contact</a>
           </li>
         </ul>
       </footer>

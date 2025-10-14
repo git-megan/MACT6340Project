@@ -5,8 +5,26 @@ dotenv.config();
 
 const app = express();
 const port = 3000;
+app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static("public"));
+
+// get the different pages of the app
+app.get("/", (req, res) => {
+  res.render("index.ejs");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about.ejs");
+});
+
+app.get("/contact", (req, res) => {
+  res.render("contact.ejs");
+});
+
+app.get("/projects", (req, res) => {
+  res.render("projects.ejs");
+});
 
 app.post("/mail", async (req, res) => {
   await utils
