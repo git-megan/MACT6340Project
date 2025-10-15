@@ -8,18 +8,14 @@ html {
   box-sizing: inherit;
 }
 
-/*
 .space {
-  height: 100px;
+  min-height: 100px;
   background-color: white;
 }
 
+/*
 .area {
   min-height: 750px;
-}
-
-.spacer {
-  min-height: 75px;
 }
 
 #splash {
