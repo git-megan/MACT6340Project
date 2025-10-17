@@ -3,6 +3,9 @@ import dotenv from "dotenv";
 import * as utils from "./utils/utils.js";
 dotenv.config();
 
+// data to populate projects
+let data = ["Project 1", "Project 2", "Project 3"];
+
 const app = express();
 const port = 3000;
 app.set("view engine", "ejs");
@@ -22,8 +25,19 @@ app.get("/contact", (req, res) => {
   res.render("contact.ejs");
 });
 
+// pass project data as an object to the projects page
 app.get("/projects", (req, res) => {
-  res.render("projects.ejs");
+  res.render("projects.ejs", { projectArray: data });
+});
+
+// individual project page
+app.get("/project/:id", (req, res) => {
+  let id = req.params.id;
+  if (id > data.length) {
+    throw new Error("No project with that ID");
+  }
+
+  res.render("project.ejs", { projectArray: data, which: id });
 });
 
 app.post("/mail", async (req, res) => {
@@ -35,6 +49,12 @@ app.post("/mail", async (req, res) => {
     .catch(() => {
       res.send({ result: "failure" });
     });
+});
+
+// error handling
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.render("error.ejs");
 });
 
 app.listen(port, () => {

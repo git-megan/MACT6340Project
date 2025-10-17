@@ -44,10 +44,22 @@
 
     <div class="b-example-divider"></div>
 
+    <!--NFT projects display area-->
+    <div class="container px-4 py-5">
+      <h2 class="pb-2 border-bottom">NFT Art Projects</h2>
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <% projectArray.forEach((item, index) => { %>
+        <div class="col">
+          <a href="/project/<%= index + 1 %>"><%= item %></a>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+
     <!--Cards layout for project work-->
 
     <div class="container px-4 py-5" id="custom-cards">
-      <h2 class="pb-2 border-bottom">My Projects</h2>
+      <h2 class="pb-2 border-bottom">Creative Coding Projects</h2>
 
       <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         <div class="col">
