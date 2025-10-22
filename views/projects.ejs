@@ -50,7 +50,10 @@
       <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         <% projectArray.forEach((item, index) => { %>
         <div class="col">
-          <a href="/project/<%= index + 1 %>"><%= item %></a>
+          <!-- <a href="/project/<%= index + 1 %>"><%= item %></a> -->
+          <%- include('projectCard', {ident: item.id, image: item.img_url, name:
+          item.project_name, artMedium: item.medium, openDate: new
+          Date(item.open_date_gmt).getFullYear()}); %>
         </div>
         <% }); %>
       </div>

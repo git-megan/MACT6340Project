@@ -1,0 +1,12 @@
+<div class="card m-2 h-100 fadein">
+  <img
+    src="<%=image %>"
+    class="card-img-top"
+    alt="An image of the NFT art project named <%= name %>"
+  />
+  <div class="card-body">
+    <h3 class="card-title"><%= name %></h3>
+    <p class="card-text">Medium: <%= artMedium %> Minted: <%= openDate %></p>
+    <a href="/project/<%= ident %>" class="btn btn-primary">View Project</a>
+  </div>
+</div>
