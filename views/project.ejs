@@ -53,10 +53,17 @@
         <div class="col d-flex flex-column align-items-start gap-2">
           <h3 class="fw-bold">On Creating <%= project.project_name %></h3>
           <p class="text-muted"><%= project.project_description %></p>
+          <h4>About the NFT</h4>
           <p><strong>Medium:</strong> <%= project.medium %></p>
           <p>
-            <strong>Year:</strong> <%= new
+            <strong>Year Minted:</strong> <%= new
             Date(project.open_date_gmt).getFullYear() %>
+          </p>
+          <p><strong>Editions:</strong> <%= project.quantity %></p>
+          <p><strong>Price (Ethereum):</strong> <%= project.price_eth %></p>
+          <p>
+            <strong>Artist Royalty:</strong> <%=
+            Math.round(project.royalty_percent) %>%
           </p>
         </div>
       </div>
