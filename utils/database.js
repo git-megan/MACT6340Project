@@ -35,8 +35,14 @@ export async function connect() {
     .promise();
 }
 
-// query the database
+// query all projects from the database
 export async function getAllProjects() {
   const [rows] = await pool.query(`SELECT * FROM projects;`);
   return rows;
+}
+
+// query a specific project
+export async function getProjectById(id) {
+  const [rows] = await pool.query(`Select * FROM projects WHERE id = ?`, [id]);
+  return rows[0]; // returns one project object or undefined
 }

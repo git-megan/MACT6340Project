@@ -51,8 +51,9 @@
         <% projectArray.forEach((item, index) => { %>
         <div class="col">
           <!-- <a href="/project/<%= index + 1 %>"><%= item %></a> -->
-          <%- include('projectCard', {ident: item.id, image: item.img_url, name:
-          item.project_name, artMedium: item.medium, openDate: new
+          <%- include('projectCard2', {ident: item.id, image: item.img_url,
+          name: item.project_name, description: item.project_description,
+          artMedium: item.medium, openDate: new
           Date(item.open_date_gmt).getFullYear()}); %>
         </div>
         <% }); %>

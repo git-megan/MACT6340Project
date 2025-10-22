@@ -4,9 +4,6 @@ import * as utils from "./utils/utils.js";
 dotenv.config();
 import * as db from "./utils/database.js";
 
-// example data to populate projects
-//let data = ["Project 1", "Project 2", "Project 3"];
-
 // data from db for projects
 let projects = [];
 
@@ -17,7 +14,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // get the different pages of the app
-app.get("/", async (req, res) => {
+app.get("/", async (req, res, next) => {
   // connect to database on getting the index page
   try {
     await db.connect();
@@ -40,18 +37,23 @@ app.get("/contact", (req, res) => {
 
 // pass project data as an object to the projects page
 app.get("/projects", (req, res) => {
-  // res.render("projects.ejs", { projectArray: data }); // using fake data for demo purposes only
   res.render("projects.ejs", { projectArray: projects });
 });
 
 // individual project page
-app.get("/project/:id", (req, res) => {
-  let id = req.params.id;
-  if (id > data.length) {
-    throw new Error("No project with that ID");
-  }
+app.get("/project/:id", async (req, res, next) => {
+  try {
+    const id = parseInt(req.params.id);
+    const project = await db.getProjectById(id);
 
-  res.render("project.ejs", { projectArray: data, which: id });
+    if (!project) {
+      return res.status(404).send("Project with that id was not found");
+    }
+
+    res.render("project.ejs", { project: project });
+  } catch (err) {
+    next(err);
+  }
 });
 
 app.post("/mail", async (req, res) => {
