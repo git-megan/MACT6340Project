@@ -21,9 +21,18 @@ app.get("/", async (req, res, next) => {
     // query database for project records
     projects = await db.getAllProjects();
     console.log(projects);
-    res.render("index.ejs"); // render index page only after getting project records
+
+    if (!projects || projects.length === 0) {
+      return res.status(404).send("No projects found in database");
+    }
+
+    // get a random project id between 1 and the length of the projects array
+    const randomIndex = Math.floor(Math.random() * projects.length);
+    const project = projects[randomIndex];
+
+    res.render("index.ejs", { project: project });
   } catch (err) {
-    next(err); // send error to error handler
+    next(err); // send error to Express error handler
   }
 });
 
