@@ -44,9 +44,21 @@ app.get("/contact", (req, res) => {
   res.render("contact.ejs");
 });
 
-// pass project data as an object to the projects page
-app.get("/projects", (req, res) => {
-  res.render("projects.ejs", { projectArray: projects });
+app.get("/projects", async (req, res, next) => {
+  // connect to database on getting the projects page (in case user skips the index page)
+  try {
+    await db.connect();
+    // query database for project records
+    projects = await db.getAllProjects();
+    console.log(projects);
+
+    if (!projects || projects.length === 0) {
+      return res.status(404).send("No projects found in database");
+    }
+    res.render("projects.ejs", { projectArray: projects });
+  } catch (err) {
+    next(err); // send error to Express error handler
+  }
 });
 
 // individual project page
