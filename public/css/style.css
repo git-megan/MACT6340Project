@@ -13,6 +13,18 @@ html {
   background-color: white;
 }
 
+/* Style for the navigation links in the header and footer */
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  font-weight: bold;
+}
+
 /*
 For fading in the project cards, as they load to the page
 */
@@ -30,18 +42,3 @@ For fading in the project cards, as they load to the page
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-
-/*
-.area {
-  min-height: 750px;
-}
-
-#splash {
-  min-height: 800px;
-  background: url("/images/smoke-meier-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-*/
