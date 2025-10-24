@@ -1,6 +1,8 @@
 <!--Artful card design with text over the image, and the entire card can be clicked, linking to the project details page-->
 <div
   class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg fadein"
+  role="img"
+  aria-label="Photo of art from <%= name %> project"
   style="
     background: linear-gradient(
         to bottom,
@@ -14,6 +16,7 @@
   <a
     href="/project/<%= ident %>"
     class="stretched-link text-decoration-none text-white"
+    aria-label="View <%= name %> project details page"
   >
     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
       <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= name %></h3>
@@ -21,7 +24,14 @@
       <ul class="d-flex list-unstyled mt-auto">
         <li class="d-flex align-items-center me-3">
           <!--code slash svg icon-->
-          <svg class="bi me-2" width="1em" height="1em" fill="currentColor">
+          <svg
+            class="bi me-2"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            role="img"
+            aria-label="Medium:"
+          >
             <path
               d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"
             />
@@ -30,7 +40,14 @@
         </li>
         <li class="d-flex align-items-center">
           <!--calendar week svg icon-->
-          <svg class="bi me-2" width="1em" height="1em" fill="currentColor">
+          <svg
+            class="bi me-2"
+            width="1em"
+            height="1em"
+            fill="currentColor"
+            role="img"
+            aria-label="Year minted:"
+          >
             <path
               d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"
             />
