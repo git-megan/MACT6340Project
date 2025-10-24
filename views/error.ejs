@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../images/highlights.svg" />
+    <link rel="icon" type="image/x-icon" href="/images/highlights.svg" />
     <title>Error Page</title>
     <meta name="author" content="Megan" />
     <meta name="description" content="A page to notify about an webapp error" />
@@ -14,7 +14,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <!--Header area contains navigation bar-->
@@ -25,16 +25,16 @@
     <div class="px-4 py-5 my-5 text-center">
       <img
         class="d-block mx-auto mb-4"
-        src="../images/highlights.svg"
+        src="/images/highlights.svg"
         alt=""
         width="72"
         height="57"
       />
-      <h1 class="display-5 fw-bold">Sorry - There Was An Error</h1>
+      <h1 class="display-5 fw-bold">Oops! There Was An Error</h1>
+      <h2><%= title %></h2>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">
-          There was an internal error. Go back to the previous page and try
-          again.
+          <%= body %> Go back to the previous page and try again.
         </p>
       </div>
     </div>
@@ -50,6 +50,6 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="/js/index.js"></script>
   </body>
 </html>

@@ -40,10 +40,6 @@ app.get("/about", (req, res) => {
   res.render("about.ejs");
 });
 
-app.get("/contact", (req, res) => {
-  res.render("contact.ejs");
-});
-
 app.get("/projects", async (req, res, next) => {
   // connect to database on getting the projects page (in case user skips the index page)
   try {
@@ -68,7 +64,10 @@ app.get("/project/:id", async (req, res, next) => {
     const project = await db.getProjectById(id);
 
     if (!project) {
-      return res.status(404).send("Project with that id was not found");
+      return res.status(404).render("error.ejs", {
+        title: "Project Not Found (404)",
+        body: "Sorry, the project your'e looking for doesn't exist.",
+      });
     }
 
     res.render("project.ejs", { project: project });
@@ -77,21 +76,21 @@ app.get("/project/:id", async (req, res, next) => {
   }
 });
 
-app.post("/mail", async (req, res) => {
-  await utils
-    .sendMessage(req.body.sub, req.body.txt)
-    .then(() => {
-      res.send({ result: "success" });
-    })
-    .catch(() => {
-      res.send({ result: "failure" });
-    });
+// if no routes matched, show 404 page
+app.use((req, res) => {
+  res.status(404).render("error.ejs", {
+    title: "Page Not Found (404)",
+    body: "Sorry, the page you're looking for doesn't exist.",
+  });
 });
 
-// error handling
+// general error handling
 app.use((err, req, res, next) => {
   console.log(err);
-  res.render("error.ejs");
+  res.status(500).render("error.ejs", {
+    title: "Server Error (500)",
+    body: "Something went wrong on our end.",
+  });
 });
 
 app.listen(port, () => {
