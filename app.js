@@ -1,13 +1,15 @@
 import express from "express";
 import dotenv from "dotenv";
 import * as utils from "./utils/utils.js";
-dotenv.config();
 import * as db from "./utils/database.js";
+dotenv.config();
+import cors from "cors";
 
 // data from db for projects
 let projects = [];
 
 const app = express();
+app.use(cors());
 const port = 3000;
 app.set("view engine", "ejs");
 app.use(express.json());
@@ -20,7 +22,6 @@ app.get("/", async (req, res, next) => {
     await db.connect();
     // query database for project records
     projects = await db.getAllProjects();
-    console.log(projects);
 
     if (!projects || projects.length === 0) {
       return res.status(404).send("No projects found in database");
@@ -46,7 +47,6 @@ app.get("/projects", async (req, res, next) => {
     await db.connect();
     // query database for project records
     projects = await db.getAllProjects();
-    console.log(projects);
 
     if (!projects || projects.length === 0) {
       return res.status(404).send("No projects found in database");

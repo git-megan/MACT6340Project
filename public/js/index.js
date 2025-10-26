@@ -4,7 +4,13 @@
   let userAddress = null;
   let connect = document.querySelector("#wallet-connect");
 
-  connectWallet(); // automatically try to connect the wallet when user lands on index page
+  // automatically try to connect the wallet when user lands on index page
+  if (window.ethereum) {
+    connectWallet();
+  } else {
+    userAddress = null;
+    connect.innerHTML = "Connect Wallet";
+  }
 
   // also try to connect when the user clicks the connect wallet button
   connect.addEventListener("click", async () => {
