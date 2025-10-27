@@ -23,14 +23,15 @@ export async function connect() {
   pool = mysql
     .createPool(
       // when using digital ocean, use cString here
+      cString
 
-      //for local db use the object below
-      {
-        host: process.env.MYSQL_HOST,
-        user: process.env.MYSQL_USER,
-        password: process.env.MYSQL_PASSWORD,
-        database: process.env.MYSQL_DATABASE,
-      }
+      //to connect to local db use the object below
+      // {
+      //   host: process.env.MYSQL_HOST,
+      //   user: process.env.MYSQL_USER,
+      //   password: process.env.MYSQL_PASSWORD,
+      //   database: process.env.MYSQL_DATABASE,
+      // }
     )
     .promise();
 }
