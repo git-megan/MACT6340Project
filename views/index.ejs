@@ -23,22 +23,10 @@
     <!-- Hero section -->
     <div class="space"></div>
 
-    <div class="px-4 py-5 my-5 text-center">
-      <img
-        class="d-block mx-auto mb-4"
-        src="../images/highlights.svg"
-        alt=""
-        width="72"
-        height="57"
-      />
-      <h1 class="display-5 fw-bold">Centered Art</h1>
-      <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4">
-          Megan M.'s creative coding artwork centering both the calm and the
-          chaotic.
-        </p>
-      </div>
-    </div>
+    <section id="hero">
+      <!--container for p5.js sketch-->
+      <div id="p5-container"></div>
+    </section>
 
     <div class="b-example-divider"></div>
     <!--Philosophy section-->
@@ -108,6 +96,10 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <!--connect wallet code-->
     <script type="module" src="./js/index.js"></script>
+    <!--p5.js library and sketch code-->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+    <script src="./js/hero-sketch.js"></script>
   </body>
 </html>

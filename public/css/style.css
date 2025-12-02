@@ -42,3 +42,16 @@ For fading in the project cards, as they load to the page
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+
+/* Style for the p5.js sketch container */
+#hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#p5-container {
+  position: absolute;
+  inset: 0;
+}
