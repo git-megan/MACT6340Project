@@ -7,6 +7,7 @@ class Star {
     this.fillCol = fillCol;
     this.world = world;
     this.npoints = npoints;
+    this.gravity = world.gravity; // Default gravity
   }
 
   move(windowWidth, windowHeight) {
@@ -16,7 +17,7 @@ class Star {
     let burst = this.collision(windowWidth, windowHeight);
     this.draw();
 
-    this.spd.y += this.world.gravity; // Apply main star gravity
+    this.spd.y += this.gravity; // Apply main star gravity
     this.pos.add(this.spd);
 
     return burst; // Return burst status directly
@@ -69,10 +70,14 @@ class World {
 }
 
 let world;
+let canvas;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  const hero = document.getElementById("hero");
+  canvas = createCanvas(hero.offsetWidth, hero.offsetHeight);
   const pos = createVector(random(100, 200), random(100, 200));
+  canvas.parent("p5-container");
+
   const spd = createVector(5, 5); // Speed for main star
   const r = random(15, 50);
   const fillCol = "#ffffff";
@@ -94,7 +99,7 @@ function draw() {
 
   for (let i = world.stars.length - 1; i >= 0; i--) {
     // Loop backward for safe removal
-    let burst = world.stars[i].move(windowWidth, windowHeight);
+    let burst = world.stars[i].move(width, height);
     if (burst) {
       let burstPos = world.stars[i].pos.copy(); // Use copy for the burst position
       let burstR = world.stars[i].r1 / 4; // Use r1 for small stars
@@ -110,10 +115,20 @@ function draw() {
         world.stars.push(tinyStar); // Add tiny star to the world
       }
       world.stars.splice(i, 1); // Remove the main star that burst
+
+      // loop the animaiton
+      if (world.stars.length < 5) {
+        let pos = createVector(random(width), random(height / 2));
+        let spd = createVector(random(-3, 3), random(2, 5));
+        let r = random(15, 40);
+
+        world.stars.push(new Star(pos, spd, r, "#ffffff", world));
+      }
     }
   }
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  const hero = document.getElementById("hero");
+  resizeCanvas(hero.offsetWidth, hero.offsetHeight);
 }
