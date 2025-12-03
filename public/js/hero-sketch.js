@@ -7,6 +7,7 @@ function setup() {
 }
 
 function draw() {
-  background("#000000");
-  circle(100, 100, 50);
+  background("#ffda00");
+  let line = new Snake();
+  line.draw();
 }
