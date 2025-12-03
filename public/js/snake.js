@@ -1,16 +1,26 @@
 class Snake {
-  constructor() {}
+  constructor() {
+    this.points = [
+      createVector(30, 20),
+      createVector(85, 20),
+      createVector(100, 60),
+      createVector(85, 75),
+      createVector(30, 75),
+    ];
+  }
+
+  push(point) {
+    this.points.push(point);
+  }
 
   draw() {
     noFill();
     strokeWeight(4);
     stroke("#ffffff");
     beginShape();
-    vertex(30, 20);
-    vertex(85, 20);
-    vertex(100, 60);
-    vertex(85, 75);
-    vertex(30, 75);
+    for (let pt of this.points) {
+      vertex(pt.x, pt.y);
+    }
     endShape();
   }
 }
