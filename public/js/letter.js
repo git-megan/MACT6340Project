@@ -10,6 +10,6 @@ class Letter {
     noStroke();
     fill("#111118");
     textAlign(CENTER, CENTER);
-    this.text(this.text, this.pos.x, this.pos.y);
+    text(this.text, this.pos.x, this.pos.y);
   }
 }
