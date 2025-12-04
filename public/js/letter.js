@@ -1,7 +1,8 @@
 class Letter {
-  constructor(text, pos) {
+  constructor(text, pos, rotation) {
     this.text = text;
     this.pos = pos;
+    this.rotation = rotation;
   }
 
   draw() {
@@ -10,6 +11,11 @@ class Letter {
     noStroke();
     fill("#111118");
     textAlign(CENTER, CENTER);
-    text(this.text, this.pos.x, this.pos.y);
+
+    push(); // new drawing state
+    translate(this.pos.x, this.pos.y); // move into position for drawing
+    rotate(this.rotation);
+    text(this.text, 0, 0);
+    pop(); // restore original drawing state
   }
 }

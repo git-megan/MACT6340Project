@@ -34,10 +34,17 @@ function mouseMoved() {
     distance = p5.Vector.dist(lastPoint, currentPoint);
   }
 
+  let rotation = 0;
+
+  if (lastPoint) {
+    let diffVector = currentPoint.copy().sub(lastPoint);
+    rotation = diffVector.heading(); // calculate the angle that the vector is heading
+  }
+
   if (distance > 40) {
     line.push(currentPoint);
 
-    letters.push(new Letter(choices[choiceNum], currentPoint));
+    letters.push(new Letter(choices[choiceNum], currentPoint, rotation));
 
     letters = letter.slice(-1 * choices.length); // limit number of letters on screen
 
