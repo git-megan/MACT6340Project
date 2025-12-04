@@ -17,7 +17,7 @@ class Snake {
     stroke("#ffffff");
     beginShape();
     for (let pt of this.points) {
-      vertex(pt.x, pt.y);
+      curveVertex(pt.x, pt.y);
     }
     endShape();
   }
