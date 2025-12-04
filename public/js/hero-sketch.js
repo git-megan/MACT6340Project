@@ -12,6 +12,9 @@ function setup() {
 function draw() {
   background("#ffda00");
   line.draw();
+
+  let letter = new Letter("M", createVector(mouseX, mouseY));
+  letter.draw();
 }
 
 function mouseMoved() {
