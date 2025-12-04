@@ -1,5 +1,5 @@
 class Letter {
-  constructor(text, pos, rotation) {
+  constructor(text, pos, rotation = 0) {
     this.text = text;
     this.pos = pos;
     this.rotation = rotation;

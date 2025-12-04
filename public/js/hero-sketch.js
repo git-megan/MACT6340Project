@@ -46,7 +46,7 @@ function mouseMoved() {
 
     letters.push(new Letter(choices[choiceNum], currentPoint, rotation));
 
-    letters = letter.slice(-1 * choices.length); // limit number of letters on screen
+    letters = letters.slice(-1 * choices.length); // limit number of letters on screen
 
     lastPoint = currentPoint;
 
