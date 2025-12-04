@@ -9,7 +9,7 @@ function setup() {
   const hero = document.getElementById("hero");
   canvas = createCanvas(hero.offsetWidth, hero.offsetHeight);
   canvas.parent("p5-container");
-  
+
   letters = [];
   choices = "Megan is a creative technologist and UX researcher - ".split("");
   choiceNum = 0;
@@ -52,6 +52,7 @@ function mouseMoved() {
 
     choiceNum = choiceNum + 1;
     if (choiceNum >= choices.length) {
-        choiceNum = 0;
+      choiceNum = 0;
+    }
   }
 }
