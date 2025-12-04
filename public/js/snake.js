@@ -11,6 +11,9 @@ class Snake {
 
   push(point) {
     this.points.push(point);
+
+    // limit the line length
+    this.points = this.points.slice(-50);
   }
 
   draw() {
