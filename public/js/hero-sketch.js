@@ -2,13 +2,19 @@ let canvas;
 let line;
 let lastPoint;
 let letters;
+let choices;
+let choiceNum;
 
 function setup() {
   const hero = document.getElementById("hero");
   canvas = createCanvas(hero.offsetWidth, hero.offsetHeight);
   canvas.parent("p5-container");
-  line = new Snake();
+  
   letters = [];
+  choices = "Megan is a creative technologist and UX researcher - ".split("");
+  choiceNum = 0;
+
+  line = new Snake(choices.length);
 }
 
 function draw() {
@@ -31,7 +37,14 @@ function mouseMoved() {
   if (distance > 40) {
     line.push(currentPoint);
 
-    letters.push(new Letter("m", currentPoint));
+    letters.push(new Letter(choices[choiceNum], currentPoint));
+
+    letters = letter.slice(-1 * choices.length); // limit number of letters on screen
+
     lastPoint = currentPoint;
+
+    choiceNum = choiceNum + 1;
+    if (choiceNum >= choices.length) {
+        choiceNum = 0;
   }
 }

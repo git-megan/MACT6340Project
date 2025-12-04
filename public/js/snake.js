@@ -1,13 +1,14 @@
 class Snake {
-  constructor() {
+  constructor(maxLength) {
     this.points = [];
+    this.maxLength = maxLength;
   }
 
   push(point) {
     this.points.push(point.copy());
 
     // limit the line length
-    this.points = this.points.slice(-50);
+    this.points = this.points.slice(-1 * this.maxLength);
   }
 
   draw() {
