@@ -5,7 +5,8 @@ class Letter {
   }
 
   draw() {
-    textSize(32);
+    textSize(64);
+    textFont("Karla");
     this.text(this.text, this.pos.x, this.pos.y);
   }
 }
