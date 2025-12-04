@@ -7,6 +7,9 @@ class Letter {
   draw() {
     textSize(64);
     textFont("Karla");
+    noStroke();
+    fill("#111118");
+    textAlign(CENTER, CENTER);
     this.text(this.text, this.pos.x, this.pos.y);
   }
 }
