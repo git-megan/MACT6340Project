@@ -55,3 +55,7 @@ For fading in the project cards, as they load to the page
   position: absolute;
   inset: 0;
 }
+
+#featured {
+  margin-top: 50px;
+}
