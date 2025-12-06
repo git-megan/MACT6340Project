@@ -57,6 +57,11 @@ app.get("/projects", async (req, res, next) => {
   }
 });
 
+// weather app page
+app.get("/weather", (req, res) => {
+  res.render("weather.ejs");
+});
+
 // individual project page
 app.get("/project/:id", async (req, res, next) => {
   try {
