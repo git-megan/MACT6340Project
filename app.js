@@ -4,6 +4,7 @@ import * as utils from "./utils/utils.js";
 import * as db from "./utils/database.js";
 dotenv.config();
 import cors from "cors";
+import axios from "axios";
 
 // data from db for projects
 let projects = [];
