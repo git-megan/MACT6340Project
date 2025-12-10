@@ -25,6 +25,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/weather-style.css" />
+    <!--Axios for handling API calls and data-->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
     <!--Header area contains navigation bar-->
@@ -46,7 +48,7 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 class="weather-app-city" id="city">Paris</h1>
+            <h1 class="weather-app-city" id="city"></h1>
             <p class="weather-app-details">
               Tuesday 14:49, scattered clouds
               <br />
@@ -55,7 +57,7 @@
           </div>
           <div class="weather-app-temperature-container">
             <div class="weather-app-icon">🌤️</div>
-            <div class="weather-app-temperature">12</div>
+            <div class="weather-app-temperature" id="temperature"></div>
             <div class="weather-app-unit">°C</div>
           </div>
         </div>
