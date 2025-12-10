@@ -63,6 +63,22 @@ app.get("/weather", (req, res) => {
   res.render("weather.ejs");
 });
 
+// weather app query data handling
+app.get("/api/weather", async (req, res) => {
+  const city = req.query.city;
+  const apiKey = process.env.WEATHER_API_KEY;
+
+  const apiUrl = `http://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  try {
+    const response = await axios.get(apiUrl);
+    const weatherData = response.data;
+    res.json(weatherData);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to fetch weather data" });
+  }
+});
+
 // individual project page
 app.get("/project/:id", async (req, res, next) => {
   try {
