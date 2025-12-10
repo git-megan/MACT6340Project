@@ -68,6 +68,12 @@ app.get("/api/weather", async (req, res) => {
   const city = req.query.city;
   const apiKey = process.env.WEATHER_API_KEY;
 
+  if (!city) {
+    return res
+      .status(400)
+      .json({ error: "City is required for weather app search" });
+  }
+
   const apiUrl = `http://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   try {
