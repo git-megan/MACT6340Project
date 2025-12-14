@@ -1,16 +1,15 @@
-import dotenv from "dotenv";
-dotenv.config();
-
 function refreshWeather(response) {
   // Get and update the temperature in the HTML
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.textContent = Math.round(
-    response.data.temperature.current
-  );
+  temperatureElement.textContent = Math.round(response.data.temp);
 
   // Update city name in the HTML
   let cityElement = document.querySelector("#city");
   cityElement.textContent = response.data.city;
+
+  // Update weather emoji/icon in the HTML
+  let iconElement = document.querySelector("#icon");
+  iconElement.innerHTML = `<img src="${response.data.icon}" alt="${response.data.condition}">`;
 }
 
 function searchCity(city) {
