@@ -68,8 +68,6 @@ app.get("/api/weather", async (req, res) => {
   const city = req.query.city;
   const apiKey = process.env.WEATHERAPI_KEY;
 
-  console.log("Weather API Key:", apiKey); // Debug: Log the API key being used
-
   if (!city) {
     return res
       .status(400)
@@ -86,6 +84,9 @@ app.get("/api/weather", async (req, res) => {
       temp: weatherData.current.temp_f,
       condition: weatherData.current.condition.text,
       icon: `https:${weatherData.current.condition.icon}`,
+      time: weatherData.location.localtime,
+      humidity: weatherData.current.humidity,
+      wind_speed: weatherData.current.wind_mph,
     });
   } catch (err) {
     console.error("Weather API error:", err.response?.data || err.message);
