@@ -74,7 +74,7 @@ app.get("/api/weather", async (req, res) => {
       .json({ error: "City is required for weather app search" });
   }
 
-  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
   try {
     const response = await axios.get(apiUrl);
@@ -83,9 +83,10 @@ app.get("/api/weather", async (req, res) => {
       city: weatherData.location.name,
       temp: weatherData.current.temp_f,
       condition: weatherData.current.condition.text,
-      icon: weatherData.current.condition.icon,
+      icon: `https:${weatherData.current.condition.icon}`,
     });
   } catch (err) {
+    console.error("Weather API error:", err.response?.data || err.message);
     res.status(500).json({ error: "Failed to fetch weather data" });
   }
 });
