@@ -68,6 +68,8 @@ app.get("/api/weather", async (req, res) => {
   const city = req.query.city;
   const apiKey = process.env.WEATHER_API_KEY;
 
+  console.log("Weather API Key:", apiKey); // Debug: Log the API key being used
+
   if (!city) {
     return res
       .status(400)
