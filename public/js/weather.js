@@ -1,3 +1,5 @@
+import axios from "https://cdn.jsdelivr.net/npm/axios@1.6.7/+esm";
+
 function refreshWeather(response) {
   // Get and update the temperature in the HTML
   let temperatureElement = document.querySelector("#temperature");
