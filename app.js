@@ -14,7 +14,7 @@ app.use(cors());
 const port = 3000;
 app.set("view engine", "ejs");
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("public")); // make public folder accessible to ejs files
 
 // get the different pages of the app
 app.get("/", async (req, res, next) => {
@@ -56,6 +56,11 @@ app.get("/projects", async (req, res, next) => {
   } catch (err) {
     next(err); // send error to Express error handler
   }
+});
+
+// augmented reality project page
+app.get("/ar-project", (req, res) => {
+  res.render("ar-project.ejs");
 });
 
 // weather app page
