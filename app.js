@@ -63,6 +63,11 @@ app.get("/ar-project", (req, res) => {
   res.render("ar-project.ejs");
 });
 
+// data sonification project page
+app.get("/data-project", (req, res) => {
+  res.render("data-project.ejs");
+});
+
 // weather app page
 app.get("/weather", (req, res) => {
   res.render("weather.ejs");
